@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
 
 const SplashScreen = () => {
+
+    const [typedText, setTypedText] = useState("");
+
     const handlePress = () => {
         // Handle button press
       }
+
+    useEffect(() => {
+        const targetText = "TaskWise";
+        let index = 0;
+
+        const typingInterval = setInterval(() => {
+            setTypedText((prev) => prev + targetText[index]);
+            index++;
+            if (index === targetText.length) {
+            clearInterval(typingInterval);
+            }
+        }, 200); // typing speed 
+        
+        return () => clearInterval(typingInterval); // 
+    }, []);
+
     return (
         <View style={styles.container}>
             <View style={styles.topTextContainer}>
                 <Text style={styles.text}>Manage your Tasks with</Text>
-                <Text style={styles.text2}>TaskWise</Text>
+                <Text style={styles.text2}>{typedText}</Text>
             </View>
             <View style={styles.middleImageContainer}>
                 <Image
@@ -35,14 +54,14 @@ const styles = StyleSheet.create({
     },
     topTextContainer: {
         alignItems: 'center',
-        marginTop: 100, 
+        marginTop: 80, 
     },
     middleImageContainer: {
         flex: 1,
         justifyContent: 'center',
     },
     bottomButtonContainer: {
-        marginBottom: 50, 
+        marginBottom: 30, 
     },
     text: {
         fontSize: 30,
