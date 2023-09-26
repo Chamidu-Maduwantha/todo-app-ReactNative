@@ -19,7 +19,7 @@ const SplashScreen = () => {
             if (index === targetText.length) {
             clearInterval(typingInterval);
             }
-        }, 200); // typing speed 
+        }, 250); // typing speed 
         
         return () => clearInterval(typingInterval); // 
     }, []);
