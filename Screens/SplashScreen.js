@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
+import { useNavigation } from '@react-navigation/native';
+
 
 const SplashScreen = () => {
+
+    const navigation = useNavigation();
 
     const [typedText, setTypedText] = useState("");
 
     const handlePress = () => {
         // Handle button press
+        navigation.navigate("Login");
+
       }
 
     useEffect(() => {
