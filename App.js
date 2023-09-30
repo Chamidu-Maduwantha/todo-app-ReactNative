@@ -24,7 +24,8 @@ function App() {
         />
         <Stack.Screen 
           name="Dashboard" 
-          component={DasboardScreen} 
+          component={DasboardScreen}
+
         />
       </Stack.Navigator>
     </NavigationContainer>
