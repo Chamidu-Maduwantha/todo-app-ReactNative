@@ -20,7 +20,7 @@ function App() {
         <Stack.Screen
           name='Login'
           component={LoginScreen}
-          options={{ headerShown: true }} // Hide header for login screen
+          options={{ headerShown: false }} // Hide header for login screen
         />
         <Stack.Screen 
           name="Dashboard" 
