@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#2A2A2A',
+    backgroundColor: '#fff',
   },
   heading: {
     fontSize: 24,
